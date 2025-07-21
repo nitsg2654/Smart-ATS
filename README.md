@@ -29,7 +29,9 @@
 
 2. **Create a `.env` file for API Key:**
 
-   You’ll need to set up your API key for **Google Gemini** in the `.env` file. Here's an example:
+   You’ll need to set up your API key for **Google Gemini** in the `.env` file.
+
+   Go to https://makersuite.google.com/app/apikey/ and create new API key
 
    ```dotenv
    GOOGLE_API_KEY=your_google_api_key_here
@@ -37,7 +39,7 @@
 
    Make sure to replace `your_google_api_key_here` with your actual Google API key.
 
-3. **Run the App:**
+4. **Run the App:**
 
    To run the app, simply use Streamlit:
 
