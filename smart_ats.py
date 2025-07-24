@@ -3,11 +3,16 @@ import os
 import google.generativeai as genai
 from pypdf import PdfReader
 
-# Check for Google API Key and handle accordingly
+# using API key from environment variables of streamlit cloud
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
     st.error("Google API key is missing. Please set it in your environment.")
     st.stop()
+
+# If you use dotenv for local development with .env file
+# from dotenv import load_dotenv
+# load_dotenv()
+
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
