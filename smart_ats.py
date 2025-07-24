@@ -3,9 +3,13 @@ import os
 import google.generativeai as genai
 from pypdf import PdfReader
 
-from dotenv import load_dotenv
-load_dotenv()
+# Check for Google API Key and handle accordingly
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+if not GOOGLE_API_KEY:
+    st.error("Google API key is missing. Please set it in your environment.")
+    st.stop()
 
+genai.configure(api_key=GOOGLE_API_KEY)
 
 device = "gpu" if os.getenv("USE_GPU", "false").lower() == "true" else "cpu"
 
